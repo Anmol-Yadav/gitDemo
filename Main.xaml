@@ -1,0 +1,504 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="556,515" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ubme="clr-namespace:UiPath.BAF.Models.Entity;assembly=UiPath.Twilio.IntegrationService" xmlns:ubmr="clr-namespace:UiPath.BAF.Models.Response;assembly=UiPath.Twilio.IntegrationService" xmlns:ubt="clr-namespace:UiPath.BAF.Telemetry;assembly=UiPath.Twilio.IntegrationService" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uim="clr-namespace:UiPath.IntegrationCore.Models;assembly=UiPath.Twilio.IntegrationService" xmlns:uis="clr-namespace:UiPath.IntegrationCore.Services;assembly=UiPath.Twilio.IntegrationService" xmlns:utia="clr-namespace:UiPath.Twilio.IntegrationService.Activities;assembly=UiPath.Twilio.IntegrationService.Activities" xmlns:utic="clr-namespace:UiPath.Twilio.IntegrationService.Client;assembly=UiPath.Twilio.IntegrationService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="39">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Twilio.IntegrationService.Activities</x:String>
+      <x:String>UiPath.BAF.Activities.ContextModel</x:String>
+      <x:String>UiPath.IntegrationCore.Models</x:String>
+      <x:String>UiPath.BAF.Models.Connection.APIConnection</x:String>
+      <x:String>UiPath.BAF.Models.Connection</x:String>
+      <x:String>UiPath.BAF.Telemetry</x:String>
+      <x:String>UiPath.BAF.Models</x:String>
+      <x:String>UiPath.BAF.ServiceInterfaces</x:String>
+      <x:String>UiPath.IntegrationCore.Activities</x:String>
+      <x:String>UiPath.BAF.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.BAF.Models.Entity</x:String>
+      <x:String>UiPath.BAF.Models.CrudOperation</x:String>
+      <x:String>UiPath.BAF.Models.Response</x:String>
+      <x:String>UiPath.Twilio.IntegrationService.Client</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Twilio.IntegrationService.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Twilio.IntegrationService</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="304,334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="uim:ScopeConnection" Name="conn" />
+      <Variable x:TypeArguments="x:String" Name="strTest" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="452,143" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <utia:Scope Connection="{x:Null}" ConnectionId="{x:Null}" DesignConnectionRequest="{x:Null}" ExistingConnection="{x:Null}" Connector="uipath-twilio-messaging" DesignConnectionEnabled="False" DisplayName="Twilio Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Scope_4" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+            <utia:Scope.Body>
+              <ActivityAction x:TypeArguments="utia:TwilioScopeActivityContext">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="utia:TwilioScopeActivityContext" Name="ScopeActivityContext" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,808" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]" Name="phnnum" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <utia:AvailablePhoneNumbersTollFree BusinessEntityName="{x:Null}" Status="{x:Null}" ConfiguredBusinessEntity="AvailablePhoneNumbers::TollFree" CrudOperation="Action" DesignConnectionEnabled="True" DisplayName="Available Toll Free Phone Numbers" sap:VirtualizedContainerService.HintSize="334,170" sap2010:WorkflowViewState.IdRef="AvailablePhoneNumbersTollFree_3">
+                    <utia:AvailablePhoneNumbersTollFree.BusinessEntity>
+                      <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="AvailablePhoneNumbers::TollFree">
+                        <ubme:BusinessEntity.AllFields>
+                          <scg:List x:TypeArguments="ubme:EntityField" Capacity="8">
+                            <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID1" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The Country Code for the phone numbers" DisplayName="Country Code" FieldName="countryCode" FormDataType="ExpressionTextBox" InArgumentValue="US" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                              <uim:OperationEntityField.ArgumentValue>
+                                <InArgument x:TypeArguments="x:String">US</InArgument>
+                              </uim:OperationEntityField.ArgumentValue>
+                            </uim:OperationEntityField>
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The fields to return on the response. Can be a single field or a comma-separated list of fields" DisplayName="Fields" FieldName="fields" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The next page cursor, taken from the response header: `elements-next-page-token`" DisplayName="NextPage" FieldName="nextPage" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="x:Int32" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:Int32" DataType="Int32" Description="The number of resources to return in a given page" DisplayName="PageSize" FieldName="pageSize" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query" DisplayName="Where" FieldName="where" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID2" ArgumentDirection="Out" ArgumentType="utic:GetAvailablePhoneNumbersTollFree[]" DataType="GetAvailablePhoneNumbersTollFree[]" Description="The response of the available Toll Free phone numbers." DisplayName="Response" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" OutArgumentValue="[phnnum]" ShouldFilterOnChange="False">
+                              <uim:OperationEntityField.ArgumentValue>
+                                <OutArgument x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]">[phnnum]</OutArgument>
+                              </uim:OperationEntityField.ArgumentValue>
+                            </uim:OperationEntityField>
+                          </scg:List>
+                        </ubme:BusinessEntity.AllFields>
+                        <ubme:BusinessEntity.EntityMetadata>
+                          <ubme:EntityMetadata Category="{x:Null}" Description="{x:Null}" Metadata="{x:Reference __ReferenceID0}" Section="{x:Null}" DisplayName="AvailablePhoneNumbersTollFree" EligibleOperations="32" IsCustomEntity="False" Name="AvailablePhoneNumbers::TollFree" />
+                        </ubme:BusinessEntity.EntityMetadata>
+                        <ubme:BusinessEntity.Metadata>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID0">
+                            <x:String x:Key="Object">AvailablePhoneNumbers__TollFree</x:String>
+                            <x:String x:Key="Client">UiPath.Twilio.IntegrationService.Client.AvailablePhoneNumbers__TollFreeAPIClient</x:String>
+                            <x:String x:Key="Operation">GetAvailablePhoneNumbersTollFree</x:String>
+                            <x:String x:Key="Path">/AvailablePhoneNumbers/{CountryCode}/TollFree</x:String>
+                          </scg:Dictionary>
+                        </ubme:BusinessEntity.Metadata>
+                        <ubme:BusinessEntity.SelectedFields>
+                          <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                            <x:Reference>__ReferenceID1</x:Reference>
+                            <x:Reference>__ReferenceID2</x:Reference>
+                          </scg:List>
+                        </ubme:BusinessEntity.SelectedFields>
+                        <ubme:BusinessEntity.TelemetryProperties>
+                          <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                        </ubme:BusinessEntity.TelemetryProperties>
+                      </ubme:BusinessEntity>
+                    </utia:AvailablePhoneNumbersTollFree.BusinessEntity>
+                    <utia:AvailablePhoneNumbersTollFree.SelectedFields>
+                      <scg:List x:TypeArguments="ubme:EntityField" Capacity="2">
+                        <x:Reference>__ReferenceID1</x:Reference>
+                        <x:Reference>__ReferenceID2</x:Reference>
+                      </scg:List>
+                    </utia:AvailablePhoneNumbersTollFree.SelectedFields>
+                    <utia:AvailablePhoneNumbersTollFree.TelemetryProperties>
+                      <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                    </utia:AvailablePhoneNumbersTollFree.TelemetryProperties>
+                  </utia:AvailablePhoneNumbersTollFree>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[phnnum.Count.ToString]" />
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[phnnum(0).Phone_number.ToString]" />
+                  <utia:MakeCall BusinessEntityName="{x:Null}" Status="{x:Null}" ConfiguredBusinessEntity="Calls" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Make a Call" sap:VirtualizedContainerService.HintSize="334,304" sap2010:WorkflowViewState.IdRef="MakeCall_2">
+                    <utia:MakeCall.BusinessEntity>
+                      <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="Calls">
+                        <ubme:BusinessEntity.AllFields>
+                          <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                            <uim:OperationEntityField x:TypeArguments="utic:Calls" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="utic:Calls" DataType="Calls" Description="The Calls object." DisplayName="Calls (Input)" FieldName="body" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="utic:Calls" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID4" ArgumentDirection="Out" ArgumentType="utic:Calls" DataType="Calls" Description="The json response of a call." DisplayName="Call Response" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                          </scg:List>
+                        </ubme:BusinessEntity.AllFields>
+                        <ubme:BusinessEntity.EntityMetadata>
+                          <ubme:EntityMetadata Category="{x:Null}" Description="{x:Null}" Metadata="{x:Reference __ReferenceID3}" Section="{x:Null}" DisplayName="Calls" EligibleOperations="1" IsCustomEntity="False" Name="Calls" />
+                        </ubme:BusinessEntity.EntityMetadata>
+                        <ubme:BusinessEntity.Metadata>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID3">
+                            <x:String x:Key="Object">Calls</x:String>
+                            <x:String x:Key="Client">UiPath.Twilio.IntegrationService.Client.CallsAPIClient</x:String>
+                            <x:String x:Key="Operation">CreateCall</x:String>
+                            <x:String x:Key="Path">/Calls</x:String>
+                          </scg:Dictionary>
+                        </ubme:BusinessEntity.Metadata>
+                        <ubme:BusinessEntity.SelectedFields>
+                          <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID5" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The destintion phone number" DisplayName="To" FieldName="body.To" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID6" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The source phone number" DisplayName="From" FieldName="body.From" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                            <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID7" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The twiml content of a call." DisplayName="Say" FieldName="body.Twiml" FormDataType="ExpressionTextBox" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                            <x:Reference>__ReferenceID4</x:Reference>
+                          </scg:List>
+                        </ubme:BusinessEntity.SelectedFields>
+                        <ubme:BusinessEntity.TelemetryProperties>
+                          <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                        </ubme:BusinessEntity.TelemetryProperties>
+                      </ubme:BusinessEntity>
+                    </utia:MakeCall.BusinessEntity>
+                    <utia:MakeCall.SelectedFields>
+                      <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                        <x:Reference>__ReferenceID5</x:Reference>
+                        <x:Reference>__ReferenceID6</x:Reference>
+                        <x:Reference>__ReferenceID7</x:Reference>
+                        <x:Reference>__ReferenceID4</x:Reference>
+                      </scg:List>
+                    </utia:MakeCall.SelectedFields>
+                    <utia:MakeCall.TelemetryProperties>
+                      <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                    </utia:MakeCall.TelemetryProperties>
+                  </utia:MakeCall>
+                </Sequence>
+              </ActivityAction>
+            </utia:Scope.Body>
+            <utia:Scope.ClientInfo>
+              <uim:ClientInfo ClientAssembly="UiPath.Twilio.IntegrationService" ClientNamespace="UiPath.Twilio.IntegrationService" />
+            </utia:Scope.ClientInfo>
+            <utia:Scope.ServiceFactory>
+              <uis:ServiceFactory BusinessEntityService="{x:Null}" QueryService="{x:Null}">
+                <uis:ServiceFactory.BusinessEntityExecuteService>
+                  <uis:BusinessEntityExecuteService />
+                </uis:ServiceFactory.BusinessEntityExecuteService>
+                <uis:ServiceFactory.ConnectionService>
+                  <uis:ConnectionService />
+                </uis:ServiceFactory.ConnectionService>
+                <uis:ServiceFactory.FileService>
+                  <uis:FileExecutionService />
+                </uis:ServiceFactory.FileService>
+                <uis:ServiceFactory.ListService>
+                  <uis:ListService />
+                </uis:ServiceFactory.ListService>
+                <uis:ServiceFactory.MetadataService>
+                  <uis:MetadataService />
+                </uis:ServiceFactory.MetadataService>
+                <uis:ServiceFactory.SampleDataService>
+                  <uis:SampleDataService />
+                </uis:ServiceFactory.SampleDataService>
+              </uis:ServiceFactory>
+            </utia:Scope.ServiceFactory>
+            <utia:Scope.TelemetryProperties>
+              <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+            </utia:Scope.TelemetryProperties>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </utia:Scope>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strTest]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">check git</InArgument>
+      </Assign.Value>
+    </Assign>
+    <utia:Scope ClientInfo="{x:Reference __ReferenceID21}" ConnectionId="{x:Null}" ExistingConnection="{x:Null}" Connection="[conn]" Connector="uipath-twilio-messaging" DesignConnectionEnabled="False" DisplayName="Twilio Scope" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="Scope_2" TelemetryEnabled="False" ThrowExceptionOnError="True" UseConnectionService="True">
+      <utia:Scope.Body>
+        <ActivityAction x:TypeArguments="utia:TwilioScopeActivityContext">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="utia:TwilioScopeActivityContext" Name="ScopeActivityContext" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,697" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]" Name="phnnum" />
+              <Variable x:TypeArguments="utic:Messages" Name="test" />
+              <Variable x:TypeArguments="ubmr:ResponseStatus" Name="res" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <utia:AvailablePhoneNumbersTollFree BusinessEntityName="{x:Null}" Status="{x:Null}" ConfiguredBusinessEntity="AvailablePhoneNumbers::TollFree" CrudOperation="Action" DesignConnectionEnabled="True" DisplayName="Available Toll Free Phone Numbers" sap:VirtualizedContainerService.HintSize="334,170" sap2010:WorkflowViewState.IdRef="AvailablePhoneNumbersTollFree_1">
+              <utia:AvailablePhoneNumbersTollFree.BusinessEntity>
+                <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="AvailablePhoneNumbers::TollFree">
+                  <ubme:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="8">
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID9" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The Country Code for the phone numbers" DisplayName="Country Code" FieldName="countryCode" FormDataType="ExpressionTextBox" InArgumentValue="US" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">US</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The fields to return on the response. Can be a single field or a comma-separated list of fields" DisplayName="Fields" FieldName="fields" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The next page cursor, taken from the response header: `elements-next-page-token`" DisplayName="NextPage" FieldName="nextPage" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="x:Int32" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:Int32" DataType="Int32" Description="The number of resources to return in a given page" DisplayName="PageSize" FieldName="pageSize" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="x:String" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query" DisplayName="Where" FieldName="where" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID10" ArgumentDirection="Out" ArgumentType="utic:GetAvailablePhoneNumbersTollFree[]" DataType="GetAvailablePhoneNumbersTollFree[]" Description="The response of the available Toll Free phone numbers." DisplayName="Response" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" OutArgumentValue="[phnnum]" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <OutArgument x:TypeArguments="utic:GetAvailablePhoneNumbersTollFree[]">[phnnum]</OutArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                    </scg:List>
+                  </ubme:BusinessEntity.AllFields>
+                  <ubme:BusinessEntity.EntityMetadata>
+                    <ubme:EntityMetadata Category="{x:Null}" Description="{x:Null}" Metadata="{x:Reference __ReferenceID8}" Section="{x:Null}" DisplayName="AvailablePhoneNumbersTollFree" EligibleOperations="32" IsCustomEntity="False" Name="AvailablePhoneNumbers::TollFree" />
+                  </ubme:BusinessEntity.EntityMetadata>
+                  <ubme:BusinessEntity.Metadata>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID8">
+                      <x:String x:Key="Object">AvailablePhoneNumbers__TollFree</x:String>
+                      <x:String x:Key="Client">UiPath.Twilio.IntegrationService.Client.AvailablePhoneNumbers__TollFreeAPIClient</x:String>
+                      <x:String x:Key="Operation">GetAvailablePhoneNumbersTollFree</x:String>
+                      <x:String x:Key="Path">/AvailablePhoneNumbers/{CountryCode}/TollFree</x:String>
+                    </scg:Dictionary>
+                  </ubme:BusinessEntity.Metadata>
+                  <ubme:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <x:Reference>__ReferenceID9</x:Reference>
+                      <x:Reference>__ReferenceID10</x:Reference>
+                    </scg:List>
+                  </ubme:BusinessEntity.SelectedFields>
+                  <ubme:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </ubme:BusinessEntity.TelemetryProperties>
+                </ubme:BusinessEntity>
+              </utia:AvailablePhoneNumbersTollFree.BusinessEntity>
+              <utia:AvailablePhoneNumbersTollFree.SelectedFields>
+                <scg:List x:TypeArguments="ubme:EntityField" Capacity="2">
+                  <x:Reference>__ReferenceID9</x:Reference>
+                  <x:Reference>__ReferenceID10</x:Reference>
+                </scg:List>
+              </utia:AvailablePhoneNumbersTollFree.SelectedFields>
+              <utia:AvailablePhoneNumbersTollFree.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </utia:AvailablePhoneNumbersTollFree.TelemetryProperties>
+            </utia:AvailablePhoneNumbersTollFree>
+            <utia:MakeCall BusinessEntityName="{x:Null}" ConfiguredBusinessEntity="Calls" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Make a Call" sap:VirtualizedContainerService.HintSize="334,304" sap2010:WorkflowViewState.IdRef="MakeCall_1" Status="[res]">
+              <utia:MakeCall.BusinessEntity>
+                <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="Calls">
+                  <ubme:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <uim:OperationEntityField x:TypeArguments="utic:Calls" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="utic:Calls" DataType="Calls" Description="The Calls object." DisplayName="Calls (Input)" FieldName="body" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="utic:Calls" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID12" ArgumentDirection="Out" ArgumentType="utic:Calls" DataType="Calls" Description="The json response of a call." DisplayName="Call Response" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False" />
+                    </scg:List>
+                  </ubme:BusinessEntity.AllFields>
+                  <ubme:BusinessEntity.EntityMetadata>
+                    <ubme:EntityMetadata Category="{x:Null}" Description="{x:Null}" Metadata="{x:Reference __ReferenceID11}" Section="{x:Null}" DisplayName="Calls" EligibleOperations="1" IsCustomEntity="False" Name="Calls" />
+                  </ubme:BusinessEntity.EntityMetadata>
+                  <ubme:BusinessEntity.Metadata>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID11">
+                      <x:String x:Key="Object">Calls</x:String>
+                      <x:String x:Key="Client">UiPath.Twilio.IntegrationService.Client.CallsAPIClient</x:String>
+                      <x:String x:Key="Operation">CreateCall</x:String>
+                      <x:String x:Key="Path">/Calls</x:String>
+                    </scg:Dictionary>
+                  </ubme:BusinessEntity.Metadata>
+                  <ubme:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID13" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The destintion phone number" DisplayName="To" FieldName="body.To" FormDataType="ExpressionTextBox" InArgumentValue="+917704847554" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">+917704847554</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID14" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The source phone number" DisplayName="From" FieldName="body.From" FormDataType="ExpressionTextBox" InArgumentValue="+17194175889" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">+17194175889</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID15" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The twiml content of a call." DisplayName="Say" FieldName="body.Twiml" FormDataType="ExpressionTextBox" InArgumentValue="&lt;Response&gt;&#xA;    &lt;Say&gt;&#xA;      This message must be nested In a Response element&#xA;      In Order For Twilio To say it To your caller.&#xA;    &lt;/Say&gt;&#xA;&lt;/Response&gt;" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">&lt;Response&gt;
+    &lt;Say&gt;
+      This message must be nested In a Response element
+      In Order For Twilio To say it To your caller.
+    &lt;/Say&gt;
+&lt;/Response&gt;</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <x:Reference>__ReferenceID12</x:Reference>
+                    </scg:List>
+                  </ubme:BusinessEntity.SelectedFields>
+                  <ubme:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </ubme:BusinessEntity.TelemetryProperties>
+                </ubme:BusinessEntity>
+              </utia:MakeCall.BusinessEntity>
+              <utia:MakeCall.SelectedFields>
+                <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                  <x:Reference>__ReferenceID13</x:Reference>
+                  <x:Reference>__ReferenceID14</x:Reference>
+                  <x:Reference>__ReferenceID15</x:Reference>
+                  <x:Reference>__ReferenceID12</x:Reference>
+                </scg:List>
+              </utia:MakeCall.SelectedFields>
+              <utia:MakeCall.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </utia:MakeCall.TelemetryProperties>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </utia:MakeCall>
+            <utia:SendMessage BusinessEntityName="{x:Null}" ConfiguredBusinessEntity="Messages" CrudOperation="Create" DesignConnectionEnabled="True" DisplayName="Send a Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="SendMessage_1" Status="[res]">
+              <utia:SendMessage.BusinessEntity>
+                <ubme:BusinessEntity AuthFields="{x:Null}" Connection="{x:Null}" Id="{x:Null}" Name="Messages">
+                  <ubme:BusinessEntity.AllFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <uim:OperationEntityField x:TypeArguments="utic:Messages" ArgumentValue="{x:Null}" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" ArgumentDirection="In" ArgumentType="utic:Messages" DataType="Messages" Description="The Messages object." DisplayName="Messages (Input)" FieldName="body" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False" />
+                      <uim:OperationEntityField x:TypeArguments="utic:Messages" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InArgumentValue="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID17" ArgumentDirection="Out" ArgumentType="utic:Messages" DataType="Messages" Description="The json response of a call." DisplayName="Message Response" FieldName="Response" FormDataType="ExpressionTextBox" IsChildEntityField="False" IsCustomField="False" IsDefault="False" IsDeletable="True" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" OutArgumentValue="[test]" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <OutArgument x:TypeArguments="utic:Messages">[test]</OutArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                    </scg:List>
+                  </ubme:BusinessEntity.AllFields>
+                  <ubme:BusinessEntity.EntityMetadata>
+                    <ubme:EntityMetadata Category="{x:Null}" Description="{x:Null}" Metadata="{x:Reference __ReferenceID16}" Section="{x:Null}" DisplayName="Messages" EligibleOperations="1" IsCustomEntity="False" Name="Messages" />
+                  </ubme:BusinessEntity.EntityMetadata>
+                  <ubme:BusinessEntity.Metadata>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object" x:Name="__ReferenceID16">
+                      <x:String x:Key="Object">Messages</x:String>
+                      <x:String x:Key="Client">UiPath.Twilio.IntegrationService.Client.MessagesAPIClient</x:String>
+                      <x:String x:Key="Operation">CreateMessage</x:String>
+                      <x:String x:Key="Path">/Messages</x:String>
+                    </scg:Dictionary>
+                  </ubme:BusinessEntity.Metadata>
+                  <ubme:BusinessEntity.SelectedFields>
+                    <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID18" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The destintion phone number" DisplayName="To" FieldName="body.To" FormDataType="ExpressionTextBox" InArgumentValue="+917704847554" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">+917704847554</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID19" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The source phone number" DisplayName="From" FieldName="body.From" FormDataType="ExpressionTextBox" InArgumentValue="+17194175889" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="True" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">+17194175889</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <uim:OperationEntityField x:TypeArguments="x:String" ContainingType="{x:Null}" DefaultValue="{x:Null}" FieldFullName="{x:Null}" InOutArgumentValue="{x:Null}" Metadata="{x:Null}" OriginalArgumentType="{x:Null}" OutArgumentValue="{x:Null}" SampleValue="{x:Null}" Value="{x:Null}" x:Name="__ReferenceID20" ArgumentDirection="In" ArgumentType="x:String" DataType="String" Description="The message to be sent." DisplayName="Body" FieldName="body.Body" FormDataType="ExpressionTextBox" InArgumentValue="test twilio" IsChildEntityField="True" IsCustomField="False" IsDefault="False" IsDeletable="False" IsIdField="False" IsSelected="False" Location="Undefined" Mandatory="False" ShouldFilterOnChange="False">
+                        <uim:OperationEntityField.ArgumentValue>
+                          <InArgument x:TypeArguments="x:String">test twilio</InArgument>
+                        </uim:OperationEntityField.ArgumentValue>
+                      </uim:OperationEntityField>
+                      <x:Reference>__ReferenceID17</x:Reference>
+                    </scg:List>
+                  </ubme:BusinessEntity.SelectedFields>
+                  <ubme:BusinessEntity.TelemetryProperties>
+                    <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+                  </ubme:BusinessEntity.TelemetryProperties>
+                </ubme:BusinessEntity>
+              </utia:SendMessage.BusinessEntity>
+              <utia:SendMessage.SelectedFields>
+                <scg:List x:TypeArguments="ubme:EntityField" Capacity="4">
+                  <x:Reference>__ReferenceID18</x:Reference>
+                  <x:Reference>__ReferenceID19</x:Reference>
+                  <x:Reference>__ReferenceID20</x:Reference>
+                  <x:Reference>__ReferenceID17</x:Reference>
+                </scg:List>
+              </utia:SendMessage.SelectedFields>
+              <utia:SendMessage.TelemetryProperties>
+                <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+              </utia:SendMessage.TelemetryProperties>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </utia:SendMessage>
+          </Sequence>
+        </ActivityAction>
+      </utia:Scope.Body>
+      <utia:Scope.DesignConnectionRequest>
+        <uim:ConnectionParams TelemetryClient="{x:Null}" AuthType="ElementInstance" ConnectionId="b0c18442-b9ae-ec11-997e-dc98400471cb" ConnectionName="9734276a-21ff-4519-ac55-920d4b9b8447">
+          <uim:ConnectionParams.ClientInfo>
+            <uim:ClientInfo x:Name="__ReferenceID21" ClientAssembly="UiPath.Twilio.IntegrationService" ClientNamespace="UiPath.Twilio.IntegrationService" />
+          </uim:ConnectionParams.ClientInfo>
+        </uim:ConnectionParams>
+      </utia:Scope.DesignConnectionRequest>
+      <utia:Scope.ServiceFactory>
+        <uis:ServiceFactory BusinessEntityService="{x:Null}" QueryService="{x:Null}">
+          <uis:ServiceFactory.BusinessEntityExecuteService>
+            <uis:BusinessEntityExecuteService />
+          </uis:ServiceFactory.BusinessEntityExecuteService>
+          <uis:ServiceFactory.ConnectionService>
+            <uis:ConnectionService />
+          </uis:ServiceFactory.ConnectionService>
+          <uis:ServiceFactory.FileService>
+            <uis:FileExecutionService />
+          </uis:ServiceFactory.FileService>
+          <uis:ServiceFactory.ListService>
+            <uis:ListService />
+          </uis:ServiceFactory.ListService>
+          <uis:ServiceFactory.MetadataService>
+            <uis:MetadataService />
+          </uis:ServiceFactory.MetadataService>
+          <uis:ServiceFactory.SampleDataService>
+            <uis:SampleDataService />
+          </uis:ServiceFactory.SampleDataService>
+        </uis:ServiceFactory>
+      </utia:Scope.ServiceFactory>
+      <utia:Scope.TelemetryProperties>
+        <scg:Dictionary x:TypeArguments="ubt:TelemetryGroup, scg:IDictionary(x:String, x:String)" />
+      </utia:Scope.TelemetryProperties>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </utia:Scope>
+  </Sequence>
+</Activity>
